@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hello</h1>
+    <canvas class="board"></canvas>
+    <script>
+        let canvas=document.querySelector(".board");   //windows = current tab and document= current tab html
+        canvas.height=window.innerHeight;  //to increase the size of the canvas
+        canvas.width=window.innerWidth;
+        let tool=canvas.getContext("2d");
+        let initialmouseX=null;
+        let initialmouseY=null;
+        let ismousedown=false;
+        tool.strokeStyle="pink";
+        window.addEventListener("mousedown",function onmouse(obj){
+            initialmouseX=obj.clientX;
+            initialmouseY=obj.clientY;
+            ismousedown=true;
+            tool.beginPath();
+            tool.moveTo(initialmouseX,initialmouseY);
+        });
+        
+        window.addEventListener("mouseup",onmouseup);
+        function onmouseup(obj){
+            
+            ismousedown=false;
+            }
+        window.addEventListener("mousemove",onmousemove);
+        function onmousemove(obj){
+            let finalmouseX=obj.clientX;
+            let finalmouseY=obj.clientY;
+        if(ismousedown==true){
+            tool.lineTo(finalmouseX,finalmouseY);
+            tool.stroke();
+        }
+        }
+    </script>
+</body>
+</html>

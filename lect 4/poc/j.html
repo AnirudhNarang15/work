@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas intro
+    </title>
+</head>
+<body>
+    <h1>White Board</h1>
+    <canvas class="board"></canvas>
+    <script>
+        let canvas=document.querySelector(".board");   //windows = current tab and document= current tab html
+        canvas.height=window.innerHeight;  //to increase the size of the canvas
+        canvas.width=window.innerWidth;
+        let tool=canvas.getContext("2d");  //2d,3d,webgl
+       // tool.fillStyle="blue";
+        //tool.fillRect(10,0,500,100); //default colour is black
+        //tool.fillStyle="yellow";
+       // tool.fillRect(100,100,50,100); //x,y,width,height
+       // tool.strokeStyle="green";      
+       // tool.lineWidth=10;
+       // tool.strokeRect(100,100,50,100);
+       tool.beginPath();
+       tool.moveTo(20,20);
+       tool.lineTo(100,100);
+       tool.lineTo(300,100);
+       tool.lineTo(20,20);
+       tool.strokeStyle="orange";
+       tool.lineWidth=10;
+       
+       tool.stroke();
+       tool.fill(blue);
+            </script> 
+</body>
+</html>

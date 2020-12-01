@@ -1,0 +1,6 @@
+- [] git config --global user.email anirudhnarang@bpitindia.com
+- [] git config --global user.name "AnirudhNarang15"
+- [] create .gitignore 
+- [] git init
+- [] git add .
+- [] git commit -m ""
